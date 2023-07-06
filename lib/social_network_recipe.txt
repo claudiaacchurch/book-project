@@ -1,0 +1,33 @@
+As a social network user,
+So I can have my information registered,
+I'd like to have a user account with my email address.
+
+As a social network user,
+So I can have my information registered,
+I'd like to have a user account with my username.
+
+As a social network user,
+So I can write on my timeline,
+I'd like to create posts associated with my user account.
+
+As a social network user,
+So I can write on my timeline,
+I'd like each of my posts to have a title and a content.
+
+As a social network user,
+So I can know who reads my posts,
+I'd like each of my posts to have a number of views.
+
+tables:
+a. user_accounts: email_address text, username text, 
+b. posts: title text, content text, views int, user_account_id int
+
+can a have many b? YES
+can b have many a? NO
+so b belongs to a
+foreign key in b
+
+
+Method	    Job	                    Arguments	                    SQL query it executes    Returns
+new_user  create a user_account	    id, email_address, username     n/a                         n/a
+create_post creates a posts         id, title, content, views, user_account_id      n/a         n/A

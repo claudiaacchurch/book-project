@@ -34,3 +34,33 @@ def test_find_single_album(db_connection):
     repository = AlbumRepository(db_connection)
     albums = repository.find(1)
     assert albums == Album(1,'Doolittle', 1989, 1)
+
+
+"""
+def test_create_adds_album_to_albums()
+repository.create('New album', 2023, 1)
+albums = repository.all()
+assert albums[-1] == Album('New album', 2023, 1)
+"""
+
+def test_create_adds_album_to_albums(db_connection):
+    db_connection.seed("seeds/music_library.sql")
+    repository = AlbumRepository(db_connection)
+    repository.create('New album', 2023, 1)
+    albums = repository.all()
+    assert albums[-1] == Album(13, 'New album', 2023, 1)
+
+
+"""
+def test_delete_adds_album_to_albums()
+repository.delete(12)
+albums = repository.all()
+assert albums[-1] == Album(11, 'Fodder on My Wings', 1982, 4)
+"""
+
+def test_delete_adds_album_to_albums(db_connection):
+    db_connection.seed("seeds/music_library.sql")
+    repository = AlbumRepository(db_connection)
+    repository.delete(12)
+    albums = repository.all()
+    assert albums[-1] == Album(11, 'Fodder on My Wings', 1982, 4)

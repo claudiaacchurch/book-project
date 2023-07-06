@@ -8,6 +8,7 @@ def test_artist_constructs():
     assert artist.id == 1
     assert artist.name == "Test Artist"
     assert artist.genre == "Test Genre"
+    #assert artist.albums == []
 
 """
 We can format artists to strings nicely

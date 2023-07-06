@@ -19,3 +19,5 @@
 #BookRepository tests
 #def test_get_all_records():
     #all method returns a list of all book table records
+
+#Book repo
